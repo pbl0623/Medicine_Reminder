@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Reminder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Healthcare Reminder</h2>
+    <form id="reminderForm">
+      <label for="name">Patient Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="age">Patient Age:</label>
+      <input type="number" id="age" min="1" required>
+
+      <div id="medicineList">
+        <div class="medicineEntry">
+          <label>Medicine:</label>
+          <input type="text" class="medicineName" required>
+
+          <label>Time:</label>
+          <input type="time" class="medicineTime" required>
+        </div>
+      </div>
+
+      <button type="button" onclick="addMedicine()">Add Another Medicine</button>
+      <button type="submit">Set Reminder</button>
+      <button type="button" onclick="clearForm()">Clear</button>
+    </form>
+
+    <div id="led" class="led"></div>
+    <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+  </div>
+
+  <!-- Notification Modal -->
+  <div id="notificationModal" class="modal">
+    <div class="modal-content">
+      <p id="notificationText"></p>
+      <button onclick="confirmMedication()">Confirm</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<head>
+  ...
+  <link rel="manifest" href="manifest.json">
+</head>
